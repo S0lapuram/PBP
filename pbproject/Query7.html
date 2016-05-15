@@ -1,0 +1,38 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Day (Date)',  'Tweets'],
+
+                ['Sun Mar 20',      8405],
+                ['Mon Mar 21',     20903],
+                ['Tue Mar 22',      15395],
+                ['Wed Mar 23',     15811],
+                ['Mon Mar 24',     16422],
+                ['Fri Mar 25',      391],
+                ['Wed Mar 30',     35892],
+                ['Thu Mar 31', 67896],
+
+
+            ]);
+
+            var options = {
+                title: 'Most Number of tweets in the world cup matches',
+                vAxis: {title: 'Tweets Count '},
+                isStacked: true
+            };
+
+            var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+<div id="chart_div" style="width: 1500px; height: 500px;"></div>
+</body>
+</html>
